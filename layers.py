@@ -75,7 +75,7 @@ def gen_v_att(input, clear):
 def gen_grad_att(input, clear):
     get_gradient_nopadding = Get_gradient_nopadding().to(args.device)
     clear_grad = get_gradient_nopadding(clear)
-    gamma_input = input.pow(1 / 2.0)
+    gamma_input = input.pow(1 / 1.5)
     gamma_grad = get_gradient_nopadding(gamma_input)
     m_g = clear_grad - gamma_grad
     return m_g
